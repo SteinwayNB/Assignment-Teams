@@ -1,5 +1,7 @@
 package Assignments;
 
+import java.util.ArrayList;
+
 public class As3_Team {
     private String name;
     private String region;
@@ -7,6 +9,7 @@ public class As3_Team {
     private int time;
     private String conductor;
     private int earnings;
+    private ArrayList<As3_Player> allPlayers = new ArrayList<>();
 
     public As3_Team(String n, String r, int nA, int t, String d, int en ){
         name = n;
@@ -51,4 +54,11 @@ public class As3_Team {
     public void setEarnings(int earnings) {
         this.earnings = earnings;
     }
+
+
+
+    public void addPlayer(String n, int ID, int a, boolean iM){
+        this.allPlayers.add(new As3_Player(n,ID, a, iM));
+    }
+
 }

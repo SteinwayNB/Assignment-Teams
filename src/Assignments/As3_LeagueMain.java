@@ -15,6 +15,7 @@ public class As3_LeagueMain {
         Scanner in = new Scanner(System.in);
         loadFile("Data/TeamNames.csv", allTeams);
 
+
         while(true) {
 
             System.out.println("Press 1 to print list of teams\nPress 2 to find averages of number of albums\nPress 3 to filter by history \nPress 4 to sort by conductor\nPress 5 to update stats\nPress 6 to exit and save ");
