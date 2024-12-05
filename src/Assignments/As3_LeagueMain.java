@@ -44,7 +44,7 @@ public class As3_LeagueMain {
 
             }
             if (choice == 3) {
-                System.out.println("Enter the number of years you would like to filter by. (More than how many years)");
+                System.out.println("Enter the number of years you would like to filter by (More than how many years)");
                 int numYear = Library.input.nextInt();
                 Library.input.nextLine();
                 for (int i = 0; i < allTeams.size(); i++) {
