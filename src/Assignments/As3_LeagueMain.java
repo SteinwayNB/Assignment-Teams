@@ -64,7 +64,7 @@ public class As3_LeagueMain {
                 System.out.println("Which Orchestra would you like to update? Type in the history of that Orchestra");
                 int tempHis = Library.input.nextInt();
                 Library.input.nextLine();
-                System.out.println("By how much would you like to update the earnings?");
+                System.out.println("By how much would you like to update earnings?");
                 int numUp = Library.input.nextInt();
                 Library.input.nextLine();
                 for (int i = 0; i < allTeams.size(); i++) {
