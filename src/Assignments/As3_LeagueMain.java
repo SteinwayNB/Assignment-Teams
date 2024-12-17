@@ -48,7 +48,8 @@ public class As3_LeagueMain {
 
         while(true) {
 
-            System.out.println("Press 1 to print list of teams\nPress 2 to find averages of number of albums\nPress 3 to filter by history \nPress 4 to sort by conductor\nPress 5 to update stats\nPress 6 to exit and save \nPress 7 to print players");
+            System.out.println("Press 1 to print list of teams\nPress 2 to find averages of number of albums\nPress 3 to filter by history \nPress 4 to sort by conductor\nPress 5 to update stats\nPress 6 to exit and save " +
+                    "\nPress 7 to print players\nPress 8 to print all Team's Player Stats\nPress 9 to update single player's stats");
 
 
             int choice = Library.input.nextInt();
@@ -116,12 +117,37 @@ public class As3_LeagueMain {
             if(choice == 7){
                 System.out.println("What is the name of the orchestra?");
                 String tempName = Library.input.nextLine();
+                boolean hasMb = false;
                 for (int i = 0; i < allTeams.size(); i++) {
                     if(tempName.equalsIgnoreCase(allTeams.get(i).getName())){
-                        System.out.println(allTeams.printPlay(i));
+                        allTeams.get(i).printPlay();
+                        hasMb = true;
                     }
                 }
+                if (hasMb == false){
+                    System.out.println("No member in this team");
+                }
             }
+
+            if(choice == 8){
+                for (int i = 0; i < allTeams.size(); i++) {
+                    System.out.print("Team name: "+allTeams.get(i).getName()+", Total members' age: ");
+                    allTeams.get(i).printAgeSum();
+                }
+            }
+
+            if(choice == 9){
+                System.out.println("Which player would you like to update his/her age?");
+                String tempAg = Library.input.nextLine();
+                System.out.println("What is this member's new age?");
+                int tempA = Library.input.nextInt();
+                Library.input.nextLine();
+                for (int i = 0; i < allTeams.size(); i++) {
+                    allTeams.get(i).findPlayer(tempAg, tempA);
+                }
+
+            }
+
             System.out.println();
 
         }//while
