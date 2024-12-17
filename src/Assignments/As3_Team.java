@@ -61,4 +61,14 @@ public class As3_Team {
         this.allPlayers.add(new As3_Player(n,ID, a, iM));
     }
 
+    public ArrayList<As3_Player> getAllPlayers() {
+        return allPlayers;
+    }
+
+
+    public void printPlay(){
+
+
+    }
+
 }

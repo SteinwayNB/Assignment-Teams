@@ -15,10 +15,40 @@ public class As3_LeagueMain {
         Scanner in = new Scanner(System.in);
         loadFile("Data/TeamNames.csv", allTeams);
 
+        allTeams.get(0).addPlayer("Daishin Kashimoto", 1, 50, false);
+        allTeams.get(0).addPlayer("Amihai Grosz", 2, 45, true);
+        allTeams.get(0).addPlayer("Noah Bendix-Balgley", 3, 40, true);
+        allTeams.get(0).addPlayer("Bruno Delepelaire",4,55,false);
+        allTeams.get(0).addPlayer("Wenzel Fuchs",5,39,true);
+
+        allTeams.get(1).addPlayer("Joseph Alessi", 1, 52, false);
+        allTeams.get(1).addPlayer("Anthony McGill", 2, 35, false);
+        allTeams.get(1).addPlayer("Cynthia Phelps", 3, 30, true);
+
+        allTeams.get(2).addPlayer("Albena Danailova",1,55,true);
+        allTeams.get(2).addPlayer("Josef Reif",2,50,true);
+
+        allTeams.get(3).addPlayer("Adam Walker", 1, 60, true);
+
+        allTeams.get(4).addPlayer("Robert Chen", 1, 35, false);
+        allTeams.get(4).addPlayer("Stefán Ragnar Höskuldsson", 2, 30, true);
+
+        allTeams.get(6).addPlayer("Christopher Bassett", 1, 53, true);
+        allTeams.get(6).addPlayer("Bowen Ha", 2, 40, false);
+        allTeams.get(6).addPlayer("Anne Richardson", 3, 50, true);
+
+        allTeams.get(7).addPlayer("Korbinian Bubenzer", 1, 53, true);
+        allTeams.get(7).addPlayer("Shizuka Mitsui", 2, 62, true);
+
+        allTeams.get(8).addPlayer("Ilia Kozlov", 1, 50, true);
+        allTeams.get(8).addPlayer("Igor Zolotarev", 2, 30, false);
+        allTeams.get(8).addPlayer("Tatiana Shmeleva", 3, 49, true);
+
+
 
         while(true) {
 
-            System.out.println("Press 1 to print list of teams\nPress 2 to find averages of number of albums\nPress 3 to filter by history \nPress 4 to sort by conductor\nPress 5 to update stats\nPress 6 to exit and save ");
+            System.out.println("Press 1 to print list of teams\nPress 2 to find averages of number of albums\nPress 3 to filter by history \nPress 4 to sort by conductor\nPress 5 to update stats\nPress 6 to exit and save \nPress 7 to print players");
 
 
             int choice = Library.input.nextInt();
@@ -81,6 +111,16 @@ public class As3_LeagueMain {
                 saveFile("Data/TeamNames.csv", allTeams);
                 break;
 
+            }
+
+            if(choice == 7){
+                System.out.println("What is the name of the orchestra?");
+                String tempName = Library.input.nextLine();
+                for (int i = 0; i < allTeams.size(); i++) {
+                    if(tempName.equalsIgnoreCase(allTeams.get(i).getName())){
+                        System.out.println(allTeams.printPlay(i));
+                    }
+                }
             }
             System.out.println();
 
